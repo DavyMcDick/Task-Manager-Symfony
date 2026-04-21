@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+[data-task-row] {
+    cursor: grab;
+    content-visibility: auto;
+    contain-intrinsic-size: 72px;
+}
+
+[data-task-card] {
+    transition:
+        border-color 150ms ease,
+        background-color 150ms ease;
+    content-visibility: auto;
+    contain-intrinsic-size: 220px;
+}
+
+[data-board-column] {
+    transition:
+        background-color 140ms ease,
+        box-shadow 140ms ease;
+}
+
+[data-board-column].is-drop-active {
+    background-color: rgba(14, 116, 144, 0.04);
+    box-shadow: inset 0 0 0 1px rgba(14, 116, 144, 0.12);
+    border-radius: 1rem;
+}
+
+.task-card-chosen,
+.task-card-dragging {
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.16);
+}
+
+.task-card-ghost {
+    opacity: 0.55;
+}
+
+.task-row-chosen > td,
+.task-row-dragging > td {
+    background: #f8fafc;
+    box-shadow: inset 0 0 0 1px rgba(14, 116, 144, 0.14);
+}
+
+.task-row-ghost {
+    opacity: 0.55;
+}
+
+[data-task-modal-panel] input,
+[data-task-modal-panel] textarea,
+[data-task-modal-panel] select {
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        background-color 160ms ease;
+}
+
+[data-layout-panel] {
+    content-visibility: auto;
+    contain-intrinsic-size: 600px;
+}
+
+[data-task-row].is-dragging {
+    opacity: 1;
+}
+
+[data-task-row].is-dragging > td {
+    background: #ffffff;
+}
+
+.toast-enter {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.97);
+    animation: toast-in 220ms ease-out forwards;
+}
+
+.toast-exit {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    animation: toast-out 240ms ease-in forwards;
+}
+
+@keyframes toast-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes toast-out {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-6px) scale(0.98);
+    }
+}

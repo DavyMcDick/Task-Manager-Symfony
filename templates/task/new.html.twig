@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create Task{% endblock %}
+
+{% block body %}
+    <main class="h-screen px-4 py-4 sm:px-6 lg:px-8">
+        <section class="mx-auto flex h-full w-full max-w-3xl items-center justify-center">
+            <div class="w-full rounded-3xl border border-slate-200 bg-white px-6 py-6 shadow-soft sm:px-8 sm:py-8">
+                <p class="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">New Task</p>
+                <h1 class="mt-2 text-2xl font-bold tracking-tight text-slate-900">Create Task</h1>
+                <p class="mt-2 text-sm text-slate-600">Add key details in one compact form.</p>
+
+                <div class="mt-6">
+                    {% include 'task/_form.html.twig' with {form: form, button_label: 'Create Task'} %}
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

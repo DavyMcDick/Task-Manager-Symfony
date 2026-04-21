@@ -1,0 +1,42 @@
+{{ form_start(form, {'attr': {'class': 'grid gap-4'}}) }}
+    {% if not form.vars.valid %}
+        <div class="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-2.5 text-sm font-medium text-rose-700">
+            Please fix the highlighted fields and try again.
+        </div>
+    {% endif %}
+
+    <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+            {{ form_label(form.title, null, {'label_attr': {'class': 'text-xs font-semibold uppercase tracking-[0.16em] text-slate-500'}}) }}
+            {{ form_widget(form.title) }}
+            <div class="mt-1.5 text-xs text-rose-600">{{ form_errors(form.title) }}</div>
+        </div>
+
+        <div>
+            {{ form_label(form.dueDate, null, {'label_attr': {'class': 'text-xs font-semibold uppercase tracking-[0.16em] text-slate-500'}}) }}
+            {{ form_widget(form.dueDate) }}
+            <div class="mt-1.5 text-xs text-rose-600">{{ form_errors(form.dueDate) }}</div>
+        </div>
+    </div>
+
+    <div>
+        {{ form_label(form.description, null, {'label_attr': {'class': 'text-xs font-semibold uppercase tracking-[0.16em] text-slate-500'}}) }}
+        {{ form_widget(form.description) }}
+        <div class="mt-1.5 text-xs text-rose-600">{{ form_errors(form.description) }}</div>
+    </div>
+
+    <div class="grid gap-4 border-t border-slate-200 pt-4 sm:grid-cols-2">
+        <div>
+            {{ form_label(form.status, null, {'label_attr': {'class': 'text-xs font-semibold uppercase tracking-[0.16em] text-slate-500'}}) }}
+            {{ form_widget(form.status) }}
+            <div class="mt-1.5 text-xs text-rose-600">{{ form_errors(form.status) }}</div>
+        </div>
+        <button type="submit" class="self-end inline-flex items-center justify-center rounded-2xl bg-cyan-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700">
+            {{ button_label|default('Save Task') }}
+        </button>
+    </div>
+
+    <a href="{{ path('task_index') }}" class="inline-flex w-fit items-center justify-center text-sm font-semibold text-slate-500 transition hover:text-slate-900">
+        Back to tasks
+    </a>
+{{ form_end(form) }}
