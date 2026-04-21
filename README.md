@@ -80,16 +80,4 @@ http://127.0.0.1:8000
 - TailwindCSS is currently loaded from CDN in the base Twig layout.
 - Migrations are included and ready to run in a fresh environment.
 
-## Background: How This Project Was Initialized
 
-If you are curious how this project can be bootstrapped from scratch, one common path is:
-
-```bash
-symfony new task-manager --webapp
-```
-
-Without Symfony CLI, you can start from Composer:
-
-```bash
-composer create-project symfony/skeleton task-manager
-```
